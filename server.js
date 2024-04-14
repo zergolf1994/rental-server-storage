@@ -28,15 +28,15 @@ app.use(require("./routes"));
 
 const server = http.createServer(app);
 
-const { HTTP_PORT, DATABASE_URL } = process.env;
+const { HTTP_PORT, MONGO_URI } = process.env;
 
 server.listen(HTTP_PORT, () => console.log(`Listening on port: %s`, HTTP_PORT));
 
 try {
-  if (!DATABASE_URL) throw new Error("Not found MONGO_URI");
+  if (!MONGO_URI) throw new Error("Not found MONGO_URI");
 
   mongoose.Promise = Promise;
-  mongoose.connect(DATABASE_URL);
+  mongoose.connect(MONGO_URI);
   mongoose.connection.on("error", (error) => console.log(error));
 } catch (error) {
   console.log("Mongodb error", error);
