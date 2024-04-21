@@ -6,7 +6,7 @@ exports.getMediaHls = async (req, res) => {
   try {
     const { slug } = req.params;
     const rows = await MediaModel.aggregate([
-      { $match: { slug } },
+      { $match: { slug, quality: { $ne: "original" }, type: "video" } },
       //server
       {
         $lookup: {

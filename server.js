@@ -11,7 +11,7 @@ const mongoose = require("mongoose");
 
 global.sv_type = "storage";
 global.dir = __dirname;
-global.dirPublic = path.join("/home/original/");
+global.dirPublic = path.join("/home/files/");
 
 const app = express();
 app.use(
