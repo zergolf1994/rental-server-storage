@@ -64,9 +64,9 @@ exports.updateDisk = async (req, res) => {
     }
     return res.status(200).json({ msg: "updated!" });
   } catch (err) {
-    return res.status(error?.code || 500).json({
+    return res.status(err?.code || 500).json({
       error: true,
-      msg: error?.message,
+      msg: err?.message,
     });
   }
 };
