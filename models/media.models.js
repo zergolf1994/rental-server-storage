@@ -16,6 +16,7 @@ exports.MediaModel = mongoose.model(
       dimention: { type: String },
       fileId: { type: String, required: true },
       serverId: { type: String, required: true },
+      streamId: { type: String },
     },
     {
       timestamps: true,
