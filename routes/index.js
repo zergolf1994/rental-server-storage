@@ -7,6 +7,7 @@ router.all("/", async (req, res) => {
 });
 
 
+router.use("/delete", require("./delete.routes"));
 router.use("/file", require("./file.routes"));
 router.use("/media", require("./media.routes"));
 router.use("/server", require("./server.routes"));
